@@ -11,6 +11,9 @@
 |
 */
 
-$router->get('/', function () use ($router) {
-    return "Rubén joto";
-});
+// Rutas para categorías
+$routes->get('/categorias', ['uses' => 'CategoriasController@getCategorias']);
+$routes->get('/categorias/{id}', ['uses' => 'CategoriasController@getCategoriaPorId']);
+$routes->post('/categorias', ['uses' => 'CategoriasController@postCategoria']);
+$routes->put('/categorias', ['uses' => 'CategoriasController@putCategoria']);
+$routes->delete('/categorias', ['uses' => 'CategoriasController@deleteCategoria']);

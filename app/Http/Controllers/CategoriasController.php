@@ -23,7 +23,7 @@ class CategoriasController extends Controller
     // Buscar por id
     public function getCategoriaPorId($id)
     {
-        $categoria = Categoria::where('id', $id)->first();
+        $categoria = Categorias::where('id', $id)->first();
 
         if (!$categoria) {
             return response()->json('No se encontró la categoría', 404);
@@ -40,7 +40,7 @@ class CategoriasController extends Controller
             'categoria' => 'required',
         ]);
 
-        $categoria = new Categoria();
+        $categoria = new Categorias();
         $categoria->fill($request->all());
 
         $guardado = $categoria->save();
@@ -60,7 +60,7 @@ class CategoriasController extends Controller
             'categoria' => 'required',
         ]);
 
-        $categoria = Categoria::where('id', $request->id)->first();
+        $categoria = Categorias::where('id', $request->id)->first();
         $categoria->fill($request->all());
 
         $resultado = $categoria - save();
@@ -75,7 +75,7 @@ class CategoriasController extends Controller
     // Borrar
     public function deleteCategoria($id)
     {
-        $eliminados = Categoria::where('id', $id)->delete();
+        $eliminados = Categorias::where('id', $id)->delete();
 
         if (count($eliminados) > 0) {
             return response()->json('La categoría se eliminó', 200);

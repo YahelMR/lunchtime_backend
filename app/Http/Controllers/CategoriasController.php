@@ -73,9 +73,9 @@ class CategoriasController extends Controller
     }
 
     // Borrar
-    public function deleteCategoria(Request $request)
+    public function deleteCategoria($id)
     {
-        $eliminados = Categoria::where('id', $request->id)->delete();
+        $eliminados = Categoria::where('id', $id)->delete();
 
         if (count($eliminados) > 0) {
             return response()->json('La categoría se eliminó', 200);

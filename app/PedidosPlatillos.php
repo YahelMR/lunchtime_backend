@@ -1,9 +1,11 @@
 <?php
 
 namespace App;
+
 use Illuminate\Database\Eloquent\Model;
 
-class Pedidos_platillos extends Model {
+class PedidosPlatillos extends Model
+{
     protected $primaryKey = 'id';
     protected $table = 'pedidos_platillos';
     public $timestamps = false;
@@ -12,7 +14,5 @@ class Pedidos_platillos extends Model {
         'id_pedido', 'id_platillo', 'cantidad', 'total'
     ];
 
-    protected $hidden = [
-        
-    ];
+    protected $hidden = [];
 }
